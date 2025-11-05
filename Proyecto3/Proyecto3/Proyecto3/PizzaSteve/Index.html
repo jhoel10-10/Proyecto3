@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pizzería Steve</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="assets/images/Logo.png" alt="Pizza Steve Logo" id="logoImg" class="d-inline-block align-text-top">
+        Pizza Steve
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <nav class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#" data-page="home"><i class="fas fa-home me-1"></i>Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-page="menu"><i class="fas fa-pizza-slice me-1"></i>Menú</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-page="promotions"><i class="fas fa-tags me-1"></i>Promociones</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-page="about"><i class="fas fa-info-circle me-1"></i>Sobre Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-page="login"><i class="fas fa-user me-1"></i>Login</a></li>
+          <li class="nav-item">
+            <a class="nav-link position-relative" href="#" id="cartBtn">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-badge" id="cartCount">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Sección Inicio -->
+    <section id="home" class="active" data-page="home">
+      <div class="container">
+        <div class="row align-items-center hero-section">
+          <div class="col-lg-6 hero-text">
+            <h1 class="display-3 fw-bold">Las Mejores Pizzas de la Ciudad</h1>
+            <p class="lead">Disfruta de nuestras deliciosas pizzas hechas con ingredientes frescos y de la mejor calidad. Tenemos una gran variedad de sabores para todos los gustos.</p>
+            <a href="#" class="btn btn-primary btn-lg" id="orderNowBtn">
+              <i class="fas fa-pizza-slice me-2"></i>ORDENAR AHORA
+            </a>
+          </div>
+          <div class="col-lg-6 hero-image">
+            <img src="assets/images/Imagen.png" alt="Pizza Deliciosa" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Login -->
+    <section id="login" data-page="login">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6 col-lg-4">
+            <div class="login-form card p-4">
+              <div class="card-body">
+                <div class="text-center mb-4">
+                  <img src="assets/images/Logo.png" alt="Pizza Steve Logo" style="width: 80px;">
+                  <h2 class="h3 fw-bold mt-3">
+                    <i class="fas fa-user-circle me-2"></i>Iniciar Sesión
+                  </h2>
+                </div>
+                <form id="loginForm">
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="username" placeholder="Usuario" required>
+                    <label for="username">Usuario</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="password" placeholder="Contraseña" required>
+                    <label for="password">Contraseña</label>
+                  </div>
+                  <button type="submit" class="btn btn-primary w-100 btn-lg">
+                    <i class="fas fa-sign-in-alt me-2"></i>Ingresar
+                  </button>
+                </form>
+                <div class="text-center mt-3">
+                  <p>¿No tienes cuenta? <a href="#"><i class="fas fa-user-plus me-1"></i>Regístrate</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Menú -->
+    <section id="menu" data-page="menu">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h1 class="display-4 fw-bold">
+            <i class="fas fa-book-open me-3" style="color: var(--accent-color);"></i>
+            Nuestro Menú
+          </h1>
+          <p class="lead">Descubre nuestra variedad de pizzas preparadas con los mejores ingredientes.</p>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="pizzaMenu">
+          <!-- El contenido del menú se cargará dinámicamente -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Promociones -->
+    <section id="promotions" data-page="promotions">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h1 class="display-4 fw-bold">
+            <i class="fas fa-fire me-3" style="color: var(--accent-color);"></i>
+            Promociones Especiales
+          </h1>
+          <p class="lead">Aprovecha nuestras increíbles promociones y disfruta de más por menos.</p>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 g-4" id="promoContainer">
+          <!-- El contenido de promociones se cargará dinámicamente -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Sobre Nosotros -->
+    <section id="about" data-page="about">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h1 class="display-4 fw-bold">
+            <i class="fas fa-store me-3" style="color: var(--accent-color);"></i>
+            Sobre Pizza Steve
+          </h1>
+          <p class="lead">Somos una pizzería comprometida con la calidad y el sabor. Desde 2010 hemos estado sirviendo las mejores pizzas de la ciudad.</p>
+        </div>
+        <div class="row mt-5">
+          <div class="col-md-6">
+            <h3><i class="fas fa-phone-alt me-2" style="color: var(--primary-color);"></i>Contáctanos</h3>
+            <ul class="list-unstyled">
+              <li><i class="fas fa-phone me-2"></i><strong>Teléfono:</strong> (123) 456-7890</li>
+              <li><i class="fas fa-envelope me-2"></i><strong>Email:</strong> info@pizzasteve.com</li>
+              <li><i class="fas fa-map-marker-alt me-2"></i><strong>Dirección:</strong> Av. Principal #123, Ciudad</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h3><i class="fas fa-clock me-2" style="color: var(--primary-color);"></i>Horario</h3>
+            <p><i class="fas fa-calendar-week me-2"></i><strong>Lunes a Viernes:</strong> 11:00 AM - 10:00 PM</p>
+            <p><i class="fas fa-calendar-day me-2"></i><strong>Sábados y Domingos:</strong> 12:00 PM - 11:00 PM</p>
+            <div class="social-links mt-4">
+              <h3><i class="fas fa-share-alt me-2" style="color: var(--primary-color);"></i>Síguenos</h3>
+              <a href="#" class="btn btn-outline-light btn-floating m-1">
+                <i class="fab fa-facebook-f me-1"></i>Facebook
+              </a>
+              <a href="#" class="btn btn-outline-light btn-floating m-1">
+                <i class="fab fa-instagram me-1"></i>Instagram
+              </a>
+              <a href="#" class="btn btn-outline-light btn-floating m-1">
+                <i class="fab fa-twitter me-1"></i>Twitter
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-dark text-white text-center p-3">
+    <div class="container">
+      <p>&copy; <span id="year">2023</span> Pizza Steve. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Modal del Carrito -->
+  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content cart-modal">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cartModalLabel">
+            <i class="fas fa-shopping-cart me-2"></i>Tu Carrito de Compras
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="cartItems">
+          <div class="empty-cart text-center py-5">
+            <i class="fas fa-shopping-basket fa-4x mb-3" style="color: var(--primary-color); opacity: 0.5;"></i>
+            <h4>Tu carrito está vacío</h4>
+            <p class="text-muted">¡Agrega algunas pizzas deliciosas!</p>
+          </div>
+        </div>
+        <div class="modal-footer flex-column align-items-stretch">
+          <div class="d-flex justify-content-between align-items-center mb-3 cart-total">
+            <h4 class="mb-0">Total:</h4>
+            <h3 class="mb-0 text-warning" id="cartTotal">Bs. 0.00</h3>
+          </div>
+          <div class="d-grid gap-2">
+            <button type="button" class="btn btn-primary btn-lg" id="checkoutBtn">
+              <i class="fas fa-credit-card me-2"></i>Proceder al Pago
+            </button>
+            <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">
+              <i class="fas fa-arrow-left me-2"></i>Seguir Comprando
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- Importar archivos MVC -->
+  <script src="models/data.js" defer></script>
+  <script src="views/view.js" defer></script>
+  <script src="controllers/controller.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
